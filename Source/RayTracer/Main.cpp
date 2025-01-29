@@ -4,23 +4,18 @@
 
 int main(){
 
-	const int  width = 256;
-	const int  height = 256;
-
-
-	std::cout << "P3\n" << width << ' ' << height << "\n255\n";
-
-	for (int j = 0; j < height; j++) {
-		std::clog << "\rScanlines remaining: " << height - j << ' ' << std::flush;
-		for (int i = 0; i < width; i++) {
-			auto pixel_color = color(double(i) / (width - 1), double(j) / (height - 1), 0.25);
-			write_color(std::cout, pixel_color);
-
-		}
+	int  width = 400;
 	
+
+	auto aspect_ratio = 16.0/9.0;
 	
-	}
-	std::cerr << "\nDone.\n";
+	//calculate image height and make sure its at least 1
+	int height = int(width / aspect_ratio);
+	height = (height < 1) ? 1 : height;
+
+	//viewport widtsh less than one are oka because they are real valued
+	auto viewport_height = 2.0;
+	auto viewport_width = viewport_height*(double(width)/height);
 
 
 }
