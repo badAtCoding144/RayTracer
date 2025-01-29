@@ -15,6 +15,8 @@ set ( EXTERNAL
 
 set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/main.cpp
+  Source/RayTracer/vec3.h
+  Source/RayTracer/color.h
 )
 
 
