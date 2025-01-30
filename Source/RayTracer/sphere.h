@@ -32,7 +32,7 @@ public:
 
 		auto sqrtd = std::sqrt(discriminant);
 
-		//Finde the nearest root in acceptable range
+		//Finde the nearest root in acceptable range of the ray
 
 		auto root = (h - sqrtd) / a;
 		if (root <= ray_tmin || ray_tmax < root) {
@@ -46,7 +46,9 @@ public:
 
 		rec.t = root;
 		rec.p = r.at(rec.t);
-		rec.normal = (rec.p - center) / radius;
+		vec3 outward_normal = (rec.p - center) / radius;
+		rec.set_face_normal(r, outward_normal);
+		//rec.normal = (rec.p - center) / radius;
 		return true;
 	}
 
