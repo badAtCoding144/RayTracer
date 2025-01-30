@@ -19,6 +19,7 @@ set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/color.h
   Source/RayTracer/ray.h
   Source/RayTracer/hittable.h
+  Source/RayTracer/hittable_list.h
 )
 
 
