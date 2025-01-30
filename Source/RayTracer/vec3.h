@@ -1,8 +1,8 @@
 #ifndef VEC3_H
 #define VEC3_H
 
-#include <cmath>
 #include <iostream>
+#include <cmath>
 
 class vec3 {
 public:
@@ -46,7 +46,7 @@ public:
 	}
 	
 	double length() const {
-		return std::sqrt(length_squared());
+		return sqrt(length_squared());
 	}
 
 	double length_squared() const {
@@ -57,7 +57,7 @@ public:
 
 using point3 = vec3;
 
-inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
+inline std:: ostream& operator<<(std::ostream& out, const vec3& v) {
 	return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
 }
 
