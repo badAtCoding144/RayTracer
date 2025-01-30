@@ -6,7 +6,6 @@
 
 
 
-
 class hittable_list : public hittable {
 
 public:

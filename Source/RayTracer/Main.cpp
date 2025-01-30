@@ -6,7 +6,10 @@
 
 
 
-color ray_color(const ray& r, const hittable& world) {
+
+
+
+color ray_color(const ray& r, const hittable& world){
 
 	hit_record rec;
 	if (world.hit(r, 0, infinity, rec)) {

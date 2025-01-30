@@ -1,8 +1,9 @@
 #ifndef VEC3_H
 #define VEC3_H
 
-#include <iostream>
 #include <cmath>
+#include <iostream>
+
 
 class vec3 {
 public:
@@ -57,7 +58,7 @@ public:
 
 using point3 = vec3;
 
-inline std:: ostream& operator<<(std::ostream& out, const vec3& v) {
+inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
 	return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
 }
 

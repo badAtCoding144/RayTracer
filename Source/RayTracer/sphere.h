@@ -7,7 +7,6 @@
 
 
 
-
 class sphere : public hittable {
 
 
