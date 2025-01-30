@@ -18,6 +18,7 @@ set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/vec3.h
   Source/RayTracer/color.h
   Source/RayTracer/ray.h
+  Source/RayTracer/hittable.h
 )
 
 
