@@ -23,6 +23,7 @@ set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/rtweekend.h
   Source/RayTracer/interval.h
   Source/RayTracer/camera.h
+  Source/RayTracer/material.h
 )
 
 
