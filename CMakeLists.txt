@@ -21,6 +21,8 @@ set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/hittable.h
   Source/RayTracer/hittable_list.h
   Source/RayTracer/rtweekend.h
+  Source/RayTracer/interval.h
+  Source/RayTracer/camera.h
 )
 
 
