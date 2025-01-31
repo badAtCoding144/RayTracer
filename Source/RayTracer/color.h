@@ -6,10 +6,24 @@
 
 using color = vec3;
 
+
+
+inline double linear_to_gamma(double linear_component) {
+	if (linear_component > 0) {
+		return std::sqrt(linear_component);
+	}
+	return 0;
+}
+
 void write_color(std::ostream& out, color pixel_color) {
 	auto r = pixel_color.x();
 	auto g = pixel_color.y();
 	auto b = pixel_color.z();
+
+	//gamma correct the color values
+	r = linear_to_gamma(r);
+	g = linear_to_gamma(g);
+	b = linear_to_gamma(b);
 
 	//translate the color values to the byte range from [0,1] to [0,255]
 
