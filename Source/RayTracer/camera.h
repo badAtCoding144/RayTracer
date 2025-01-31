@@ -12,6 +12,7 @@ public:
 	int samples_per_pixel = 10; //samples for AA per pixel
 	int max_depth = 10; // max number of ray bounces into scene
 
+	double vfov = 90.0;       // Vertical field-of-view in degrees
 
 	void render(const hittable& world) {
 		initialize();
@@ -44,7 +45,10 @@ public:
 
 		// Determine viewport dimensions.
 		auto focal_length = 1.0;
-		auto viewport_height = 2.0;
+		auto theta = degrees_to_radians(vfov);
+		auto h = std::tan(theta / 2);
+		auto viewport_height = 2.0 * h;
+
 		auto viewport_width = viewport_height * (double(image_width) / image_height);
 
 		// Calculate the vectors across the horizontal and down the vertical viewport edges.
