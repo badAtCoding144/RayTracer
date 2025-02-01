@@ -10,6 +10,14 @@ public:
 	interval x, y, z;
 
 	aabb() {}
+
+	aabb(const aabb& a, const aabb& b) {
+		x = interval(a.x, b.x);
+		y = interval(a.y, b.y);
+		z = interval(a.z, b.z);
+	
+	}
+
 	aabb(const interval& x, const interval& y, const interval& z) : x(x), y(y), z(z) {}
 
 	aabb(const point3& a, const point3& b) {
