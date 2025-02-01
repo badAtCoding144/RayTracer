@@ -67,7 +67,9 @@ public:
 		//rec.normal = (rec.p - center) / radius;
 		return true;
 	}
-
+	aabb bounding_box() const override {
+		return bbox;
+	}
 
 private:
 	ray center;
