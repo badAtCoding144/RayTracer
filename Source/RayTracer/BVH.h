@@ -18,7 +18,19 @@ public:
 
 
 	bvh_node(std::vector<std::shared_ptr<hittable>>& objects, size_t start, size_t end) {
-		int axis = random_int(0, 2);
+	
+
+
+		bbox = aabb::empty;
+
+		for (size_t object_index = start; object_index < end; object_index++) {
+			bbox = aabb(bbox, objects[object_index]->bounding_box());
+		
+		
+		}
+		int axis = bbox.longest_axis();
+
+
 
 		auto comparator = (axis == 0) ? box_x_compare
 			: (axis == 1) ? box_y_compare 
@@ -43,7 +55,7 @@ public:
 		
 		}
 
-		bbox = aabb(left->bounding_box(), right->bounding_box());
+
 	}
 
 	bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
@@ -58,8 +70,7 @@ public:
 	
 	}
 
-	aabb bounding_box() const override{ return bbox;
-	}
+	aabb bounding_box() const override{ return bbox;}
 
 
 private:
