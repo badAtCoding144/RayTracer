@@ -10,7 +10,8 @@ public:
 	point3 p;
 	vec3 normal;
 	double t;
-
+	double u;
+	double v;
 	shared_ptr<material> mat;
 	bool front_face;
 

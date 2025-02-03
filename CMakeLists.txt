@@ -25,6 +25,8 @@ set ( SOURCE_ONE_WEEKEND
   Source/RayTracer/camera.h
   Source/RayTracer/material.h
   Source/RayTracer/AABB.h
+  Source/RayTracer/texture.h
+
 )
 
 
