@@ -1,7 +1,9 @@
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
+#include "rtw_stb_image.h"
 #include "rtweekend.h"
+#include "perlin.h"
 
 class texture {
 public:
@@ -53,5 +55,44 @@ private:
 
 };
 
+class image_texture : public texture {
+public:
+
+	image_texture(const char* filename) : image(filename) {}
+
+	color value(double u, double v, const point3& p) const override {
+		if (image.height() <= 0) return color(0,0,1);
+
+		u = interval(0, 1).clamp(u);
+		v = 1.0 - interval(0, 1).clamp(v);
+
+		auto i = int(u * image.width());
+		auto j = int(v * image.height());
+		auto pixel = image.pixel_data(i, j);
+
+		auto color_scale = 1.0 / 255.0;
+		return color(color_scale * pixel[0], color_scale * pixel[1], color_scale * pixel[2]);
+	
+	}
+
+
+private:
+	rtw_image image;
+
+
+
+};
+
+
+class noise_texture : public texture {
+public:
+	noise_texture() {}
+
+	color value(double u, double v, const point3& p) const override {
+		return color(1, 1, 1) * noise.noise(p);
+	}
+private:
+	perlin noise;
+};
 
 #endif
