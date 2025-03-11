@@ -1,1 +1,17 @@
-﻿
+﻿  Main.cpp
+F:\Repositories\RayTracer\Source\RayTracer\rtw_stb_image.h(22,19): error C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  (compiling source file 'Main.cpp')
+  
+F:\Repositories\RayTracer\Source\RayTracer\quad.h(67,9): warning C4552: '-': result of expression not used
+  (compiling source file 'Main.cpp')
+  
+  vec3.h
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(66,15): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(66,32): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(66,49): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(70,15): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(70,40): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(70,65): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(163,17): error C3861: 'random_double': identifier not found
+F:\Repositories\RayTracer\Source\RayTracer\vec3.h(163,39): error C3861: 'random_double': identifier not found
+  Generating Code...
